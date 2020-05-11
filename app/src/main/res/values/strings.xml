@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MvvmSampleApp</string>
+    <string name="hint_enter_username">"Enter user name "</string>
+    <string name="hint_enter_password">Enter password</string>
+    <string name="app_title">MVVM Sample App</string>
+    <string name="imgLogoDescription">Android logo</string>
+    <string name="imgBackgroundDescription">"A computer background "</string>
+    <string name="submitDescription">Submit</string>
 </resources>
