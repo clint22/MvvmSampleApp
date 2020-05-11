@@ -77,6 +77,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
+        android:background="@drawable/edittext_rectange_transparent_background"
         android:gravity="center"
         android:padding="20dp"
         android:text="@string/submitDescription"
