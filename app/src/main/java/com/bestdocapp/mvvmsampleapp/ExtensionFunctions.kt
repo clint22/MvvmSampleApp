@@ -7,3 +7,8 @@ fun String.showToast() = Toast.makeText(
     MyApplication.instance.applicationContext,
     this, Toast.LENGTH_SHORT
 ).show()
+
+fun validate(input : String) {
+
+
+}
