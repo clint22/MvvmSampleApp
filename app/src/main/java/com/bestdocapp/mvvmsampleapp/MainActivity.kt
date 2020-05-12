@@ -30,18 +30,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun callLogin() {
-        /* https://www.youtube.com/watch?v=tNsW-Vl0mX4
-        Watch this video to know more about local functions in Kotlin */
-        fun validate(username: String, password: String) {
-            if (username.isEmpty() || password.isEmpty()) {
-                "Input cannot be empty".showToast()
-            } else {
-                "Successfully Logged in".showToast()
-            }
+
+        if (validate(editTextUserName.text.toString()) && validate(editTextPassword.text.toString())) {
+
+            "Successfully logged in".showToast()
+
+        } else {
+
+            "Input cannot be null".showToast()
         }
-        validate(
-            username = editTextUserName.text.toString(),
-            password = editTextPassword.text.toString()
-        )
     }
 }
