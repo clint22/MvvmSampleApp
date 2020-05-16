@@ -6,4 +6,5 @@
     <string name="imgLogoDescription">Android logo</string>
     <string name="imgBackgroundDescription">"A computer background "</string>
     <string name="submitDescription">Submit</string>
+    <string name="flat_list_description">Flat list will come here</string>
 </resources>
