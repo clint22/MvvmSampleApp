@@ -27,7 +27,9 @@ fun LottieAnimationView.startLottieAnimation() {
 }
 
 
-// Stops the lottie Animation
+/**
+Stops the lottie animation
+ */
 fun LottieAnimationView.stopLottieAnimation() {
     this.visibility = View.GONE
     this.cancelAnimation()
