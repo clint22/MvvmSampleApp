@@ -9,7 +9,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
 import com.bestdocapp.mvvmsampleapp.databinding.FragmentSplashBinding
 
-
+/**
+ * This fragment will determine if the user is logged in or not
+ * */
 class SplashFragment : Fragment() {
 
 

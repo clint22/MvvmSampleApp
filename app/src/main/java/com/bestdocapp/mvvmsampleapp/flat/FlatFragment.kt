@@ -7,6 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.bestdocapp.mvvmsampleapp.databinding.FragmentFlatBinding
 
+/**
+ * This fragment will list out the available flats
+* */
 class FlatFragment : Fragment() {
     private lateinit var binding: FragmentFlatBinding
     override fun onCreateView(

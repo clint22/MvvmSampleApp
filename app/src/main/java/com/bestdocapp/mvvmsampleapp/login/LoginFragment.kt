@@ -13,7 +13,9 @@ import com.bestdocapp.mvvmsampleapp.*
 import com.bestdocapp.mvvmsampleapp.databinding.FragmentLoginBinding
 import kotlinx.android.synthetic.main.activity_main.*
 
-
+/**
+ * This fragment will help the user to login into the app
+ * */
 class LoginFragment : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentLoginBinding
     private lateinit var loginViewModel: LoginViewModel
