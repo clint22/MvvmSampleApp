@@ -7,4 +7,8 @@
     <string name="imgBackgroundDescription">"A computer background "</string>
     <string name="submitDescription">Submit</string>
     <string name="flat_list_description">Flat list will come here</string>
+    <string name="please_wait_description">Please wait ...</string>
+    <string name="app_name_description">FLAT MATES</string>
+    <string name="app_title_description">Use FLAT MATES to book flats for you and your friends</string>
+    <string name="login_description">Login</string>
 </resources>

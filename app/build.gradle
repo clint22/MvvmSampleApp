@@ -60,9 +60,16 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
 
 //    OkHttp3
-    implementation 'com.squareup.okhttp3:okhttp:3.12.6'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
+    implementation 'com.squareup.okhttp3:okhttp:4.6.0'
+    implementation("com.squareup.okhttp3:logging-interceptor:4.6.0")
+//    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
 
 //    Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.6.4'
+
+//    Lottie Animation
+    implementation 'com.airbnb.android:lottie:3.4.0'
+
+//    Preference manager
+    implementation "androidx.preference:preference-ktx:1.1.1"
 }
