@@ -7,7 +7,9 @@ import com.bestdocapp.mvvmsampleapp.databinding.ActivitySplashBinding
 import com.bestdocapp.mvvmsampleapp.flat.FlatActivity
 import com.bestdocapp.mvvmsampleapp.login.LoginActivity
 
-// This Activity will decide whether the user has been logged in or not.
+/**
+ *  This Activity will decide whether the user has been logged in or not.
+ */
 class SplashActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashBinding
