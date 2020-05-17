@@ -2,12 +2,12 @@ package com.bestdocapp.mvvmsampleapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.bestdocapp.mvvmsampleapp.databinding.ActivitySplashBinding
 import com.bestdocapp.mvvmsampleapp.flat.FlatActivity
 import com.bestdocapp.mvvmsampleapp.login.LoginActivity
 
+// This Activity will decide whether the user has been logged in or not.
 class SplashActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashBinding

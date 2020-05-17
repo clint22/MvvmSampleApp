@@ -19,6 +19,7 @@ fun validate(input: String?): Boolean {
     return input?.isNotEmpty() ?: false
 }
 
+// Starts the lottie Animation
 fun LottieAnimationView.startLottieAnimation() {
     this.visibility = View.VISIBLE
     this.playAnimation()
@@ -26,11 +27,13 @@ fun LottieAnimationView.startLottieAnimation() {
 }
 
 
+// Stops the lottie Animation
 fun LottieAnimationView.stopLottieAnimation() {
     this.visibility = View.GONE
     this.cancelAnimation()
 }
 
+// Set a SharedPreference for a String value
 fun String.setStringSharedPreference(sharedPrefKey: String) {
 
     val preference = MyApplication.instance.applicationContext.getSharedPreferences(
@@ -43,6 +46,7 @@ fun String.setStringSharedPreference(sharedPrefKey: String) {
 }
 
 
+// Get a SharedPreference for a String value
 fun getStringSharedPreference(sharedPrefKey: String): String? {
     val preference = MyApplication.instance.applicationContext.getSharedPreferences(
         MyApplication.instance.getString(R.string.app_name), Context.MODE_PRIVATE
