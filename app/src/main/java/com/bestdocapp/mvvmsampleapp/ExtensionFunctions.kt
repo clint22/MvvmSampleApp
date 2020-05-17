@@ -2,6 +2,7 @@ package com.bestdocapp.mvvmsampleapp
 
 import android.content.Context
 import android.view.View
+import android.view.animation.Animation
 import android.widget.Toast
 import com.airbnb.lottie.LottieAnimationView
 
@@ -26,7 +27,7 @@ fun validate(input: String?): Boolean {
 fun LottieAnimationView.startLottieAnimation() {
     this.visibility = View.VISIBLE
     this.playAnimation()
-    this.repeatMode
+    this.repeatCount = Animation.INFINITE
 }
 
 
