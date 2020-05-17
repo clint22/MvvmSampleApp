@@ -4,41 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightBlue500"
+    android:background="@color/appWhite"
     tools:context=".login.LoginActivity">
 
-    <ImageView
-        android:id="@+id/imgBackgroundImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:alpha="0.8"
-        android:contentDescription="@string/imgBackgroundDescription"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieLoadingAnimation"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/sample_background_image" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSubmit"
+        app:lottie_fileName="lottie/loading_animation_dark.json" />
 
     <EditText
         android:id="@+id/editTextUserName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="16dp"
         android:autofillHints="@string/hint_enter_username"
         android:background="@drawable/edittext_rectangle_white_background"
         android:ems="10"
         android:hint="@string/hint_enter_username"
         android:inputType="textPersonName"
-        android:padding="20dp"
+        android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -52,24 +49,11 @@
         android:ems="10"
         android:hint="@string/hint_enter_password"
         android:inputType="textPersonName|textPassword"
-        android:padding="20dp"
+        android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextUserName" />
-
-    <ImageView
-        android:id="@+id/imgLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/imgLogoDescription"
-        app:layout_constraintBottom_toBottomOf="@+id/imgBackgroundImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgBackgroundImage"
-        app:layout_constraintVertical_bias="0.34"
-        app:srcCompat="@drawable/android_svg_logo" />
 
     <TextView
         android:id="@+id/txtSubmit"
@@ -81,14 +65,38 @@
         android:background="@drawable/edittext_rectange_transparent_background"
         android:gravity="center"
         android:padding="20dp"
-        android:text="@string/submitDescription"
+        android:text="@string/login_description"
         android:textAllCaps="true"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
+        android:textColor="@color/appWhite"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="144dp"
+        android:fontFamily="@font/arbutus"
+        android:text="@string/app_name_description"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="@string/app_title_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
