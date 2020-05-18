@@ -25,10 +25,14 @@ class LoginFragment : Fragment(), View.OnClickListener {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentLoginBinding.inflate(layoutInflater)
+        return binding.root
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
         setClickListeners()
         setupViewModel()
         observeViewModel()
-        return binding.root
     }
 
     private fun observeViewModel() {

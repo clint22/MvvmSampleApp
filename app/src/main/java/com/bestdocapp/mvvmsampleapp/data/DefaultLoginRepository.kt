@@ -5,9 +5,11 @@ import com.bestdocapp.mvvmsampleapp.data.remote.GetDataService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class LoginRepository {
+class DefaultLoginRepository {
 
     private var login: Login? = null
+
+
     suspend fun login(
         username: String,
         password: String
