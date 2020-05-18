@@ -11,14 +11,20 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
+/**
+ * This class will maintain the unit test cases of the LoginViewModel
+ * */
 @RunWith(AndroidJUnit4::class)
 class LoginViewModelTest {
 
     @get:Rule
     var instantExecutorRule = InstantTaskExecutorRule()
 
+    /**
+     * A sample unit test function that will return a 'Unit' if it is success
+     * */
     @Test
-    fun login_shouldReturnUserDetails() {
+    fun test_shouldReturnUnit() {
 
         // Given a fresh TasksViewModel
         val loginViewModel = LoginViewModel()

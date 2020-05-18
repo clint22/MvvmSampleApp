@@ -5,6 +5,7 @@
       <w>creds</w>
       <w>gson</w>
       <w>okhttp</w>
+      <w>robo</w>
     </words>
   </dictionary>
 </component>

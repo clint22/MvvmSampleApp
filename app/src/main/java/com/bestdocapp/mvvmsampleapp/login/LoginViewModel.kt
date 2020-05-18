@@ -32,6 +32,9 @@ class LoginViewModel : ViewModel() {
         }
     }
 
+    /**
+     * Just a test method which will return a 'Unit' when triggered
+    * */
     fun testEvent() {
 
         _testEventResult.value = Unit
