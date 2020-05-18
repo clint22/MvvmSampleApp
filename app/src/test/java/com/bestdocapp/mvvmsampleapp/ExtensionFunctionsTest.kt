@@ -10,7 +10,7 @@ class ExtensionFunctionsTest {
 
         val input = "Kotlin"
         val result = validate(input)
-        assertEquals(true, true)
+        assertEquals(result, true)
     }
 
     @Test
@@ -18,7 +18,7 @@ class ExtensionFunctionsTest {
 
         val input = null
         val result = validate(input)
-        assertEquals(false, false)
+        assertEquals(result, false)
 
     }
 }
