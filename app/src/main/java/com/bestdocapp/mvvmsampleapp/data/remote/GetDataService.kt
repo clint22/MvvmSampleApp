@@ -16,6 +16,4 @@ interface GetDataService {
         @Field(KEY_USERNAME) username: String?,
         @Field(KEY_PASSWORD) password: String?
     ): Response<Login?>?
-
 }
-
