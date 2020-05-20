@@ -1,4 +1,5 @@
 package com.bestdocapp.mvvmsampleapp.data.remote
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.bestdocapp.mvvmsampleapp.Result
@@ -21,6 +22,7 @@ object RemoteDataSource : AppDataSource {
     override suspend fun observeLogin(): LiveData<Result<Login>> {
         return observableLogin
     }
+
     override suspend fun getLogin(username: String, password: String): Result<Login> {
         withContext(Dispatchers.IO) {
 
@@ -42,7 +44,6 @@ object RemoteDataSource : AppDataSource {
 
                     }
                 } else {
-
                     login = Login(
                         message = "Invalid credentials",
                         token = "",

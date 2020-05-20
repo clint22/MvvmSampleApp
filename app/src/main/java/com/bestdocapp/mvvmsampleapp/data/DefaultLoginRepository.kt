@@ -1,9 +1,7 @@
 package com.bestdocapp.mvvmsampleapp.data
 
-import com.bestdocapp.mvvmsampleapp.data.remote.ApiFactory
-import com.bestdocapp.mvvmsampleapp.data.remote.GetDataService
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
+import com.bestdocapp.mvvmsampleapp.Result
+import com.bestdocapp.mvvmsampleapp.data.remote.RemoteDataSource
 
 /**
  * This class will handle the co-ordination b/w the LoginViewModel and the Database Layer ( Remote )
@@ -11,9 +9,18 @@ import kotlinx.coroutines.withContext
 class DefaultLoginRepository {
 
     private var login: Login? = null
-
+    private val remoteDataSource: RemoteDataSource = RemoteDataSource
 
     suspend fun login(
+        username: String,
+        password: String
+    ): Result<Login> {
+
+        return remoteDataSource.getLogin(username = username, password = password)
+    }
+
+
+    /*suspend fun login(
         username: String,
         password: String
     ): Login? {
@@ -56,7 +63,7 @@ class DefaultLoginRepository {
 
         }
         return login
-    }
+    }*/
 
 
 }
