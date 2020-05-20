@@ -7,6 +7,7 @@ import com.bestdocapp.mvvmsampleapp.data.Login
 import com.bestdocapp.mvvmsampleapp.data.source.AppDataSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import okio.IOException
 import java.lang.Exception
 
 /**
@@ -54,7 +55,7 @@ object RemoteDataSource : AppDataSource {
                     )
 
                 }
-            } catch (exception: Exception) {
+            } catch (exception: IOException) {
                 Result.Error(exception)
             }
         }
