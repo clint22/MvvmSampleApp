@@ -9,7 +9,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.lang.Exception
 
-
+/**
+ * Implementation of the data source using the remote APIs.
+ * */
 object RemoteDataSource : AppDataSource {
 
     private val observableLogin = MutableLiveData<Result<Login>>()
@@ -53,7 +55,7 @@ object RemoteDataSource : AppDataSource {
 
                 }
             } catch (exception: Exception) {
-
+                Result.Error(exception)
             }
         }
         return Result.Success(login)
