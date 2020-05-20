@@ -1,17 +1,22 @@
 package com.bestdocapp.mvvmsampleapp.login
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
 import com.bestdocapp.mvvmsampleapp.*
+import com.bestdocapp.mvvmsampleapp.data.Login
 import com.bestdocapp.mvvmsampleapp.databinding.FragmentLoginBinding
+import com.google.gson.Gson
+import com.google.gson.JsonObject
 import kotlinx.android.synthetic.main.activity_main.*
+import org.json.JSONObject
 
 /**
  * This fragment will help the user to login into the app
@@ -48,8 +53,13 @@ class LoginFragment : Fragment(), View.OnClickListener {
 
         loginViewModel.loginResult.observe(
             this.requireActivity(),
-            Observer { login ->
+            Observer {
                 binding.lottieLoadingAnimation.stopLottieAnimation()
+                val jsonObject = JSONObject(Gson().toJson(it))
+                Log.e("jsonString", Gson().toJson(jsonObject))
+                val login =
+                    Gson().fromJson(jsonObject.getJSONObject("data").toString(), Login::class.java)
+                Log.e("loginData", Gson().toJson(login))
                 if (login.status) {
                     login.token?.setStringSharedPreference(SHARED_PREF_USER_TOKEN)
                     findNavController().navigate(R.id.flatFragment, null, options)

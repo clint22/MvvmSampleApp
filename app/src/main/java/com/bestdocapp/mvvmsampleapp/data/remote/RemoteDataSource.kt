@@ -1,34 +1,35 @@
-package com.bestdocapp.mvvmsampleapp.data
+package com.bestdocapp.mvvmsampleapp.data.remote
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.bestdocapp.mvvmsampleapp.Result
-import com.bestdocapp.mvvmsampleapp.data.remote.RemoteDataSource
+import com.bestdocapp.mvvmsampleapp.data.Login
+import com.bestdocapp.mvvmsampleapp.data.source.AppDataSource
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import okio.IOException
+import java.lang.Exception
 
 /**
- * This class will handle the co-ordination b/w the LoginViewModel and the Database Layer ( Remote )
+ * Implementation of the data source using the remote APIs.
  * */
-class DefaultLoginRepository {
+object RemoteDataSource : AppDataSource {
 
-    private var login: Login? = null
-    private val remoteDataSource: RemoteDataSource = RemoteDataSource
+    private val observableLogin = MutableLiveData<Result<Login>>()
+    private lateinit var login: Login
 
-    suspend fun login(
-        username: String,
-        password: String
-    ): Result<Login> {
-
-        return remoteDataSource.getLogin(username = username, password = password)
+    override suspend fun login(username: String, password: String) {
+        observableLogin.value = getLogin(username, password)
     }
 
+    override suspend fun observeLogin(): LiveData<Result<Login>> {
+        return observableLogin
+    }
 
-    /*suspend fun login(
-        username: String,
-        password: String
-    ): Login? {
-
+    override suspend fun getLogin(username: String, password: String): Result<Login> {
         withContext(Dispatchers.IO) {
 
             try {
-
                 val service = ApiFactory.retrofit().create(GetDataService::class.java)
                 val call = service.login(
                     username = username,
@@ -46,7 +47,6 @@ class DefaultLoginRepository {
 
                     }
                 } else {
-
                     login = Login(
                         message = "Invalid credentials",
                         token = "",
@@ -55,16 +55,12 @@ class DefaultLoginRepository {
                     )
 
                 }
-
-            } catch (e: Exception) {
-
-                println(e)
+            } catch (exception: IOException) {
+                Result.Error(exception)
             }
-
         }
-        return login
-    }*/
+        return Result.Success(login)
+    }
 
 
 }
-
